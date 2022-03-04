@@ -1,0 +1,90 @@
+/*diseño de los formularios*/
+.form-register { 
+    width: 400px;
+    background:transparent;
+    padding: 42px;
+    margin: auto;
+    margin-top:5px;
+    border-radius: 30px;
+    font-family: ´calibri´ ;
+    color:rgb(5, 5, 5);
+box-shadow: 7px 13px 37px #250a27;
+    text-align: left;
+}
+.form-register h4 {
+  font-size: 22px ;
+  margin-bottom: 22px;  
+}
+.controls {
+    width: 100%;
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border:1px solid #250a27;
+    font-family: ´calibri´;
+    font-size: 18px;
+    }
+    .form-register p {
+        height: 5px;
+        text-align:  center;
+        font-size: 18px;
+    }
+    .form-register a {
+        color: rgb(12, 12, 12);
+        text-decoration: none;
+    }
+    .form-register a:hover {
+        color: rgb(22, 21, 21);
+        text-decoration: underline;
+
+
+    }
+    .form-register .botons {
+        width: 100%;
+        background: #250a27;
+        border: none;
+        padding: 8px;
+        color: rgb(241, 237, 237);
+        margin: 3px;
+        font-size: 16px;
+        
+
+    }
+    body {
+        margin: 0;
+        padding: 0;
+       
+        background-size: cover;
+        font-family: sans-serif;
+        height: 100vh;
+      }
+    /*Se ingresa boton regresar*/
+nav{
+    text-align: left;
+    padding: 30px 50px 0 0;
+    
+}
+
+nav > a{
+    color:rgb(61, 10, 109);
+    font-weight: 300;
+    text-decoration: none;
+    margin-left: 50px
+  
+
+ 
+}
+
+nav > a:hover{
+    text-decoration: underline;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../img/fondo\ contacto.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+  }
