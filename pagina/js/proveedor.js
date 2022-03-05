@@ -1,4 +1,4 @@
-var url = './../controlador/persona.controlador.php';
+var url = '../../controller/supplier/proveedorControlador.php';
 
 $(document).ready(function () {
   Consultar();

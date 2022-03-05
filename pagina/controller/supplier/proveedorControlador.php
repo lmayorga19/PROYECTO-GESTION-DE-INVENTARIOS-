@@ -1,6 +1,6 @@
 <?php
 
-    require '../modelos/persona.modelo.php';
+    require '../../models/supplierModel/supplierModel.php';     
 
     if($_POST){
         $persona = new Persona();
