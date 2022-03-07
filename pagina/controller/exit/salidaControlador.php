@@ -21,32 +21,32 @@
                 $idProduto = $_POST["idProducto"];
 
                 if($fechaSalida == ""){
-                    echo json_encode("Debe ingresar los nombres de la persona");
+                    echo json_encode("Debe ingresar la fecha de salida");
                     return;
                 }
 
                 if($cantidad == ""){
-                    echo json_encode("Debe ingresar los apellidos de la persona");
+                    echo json_encode("Debe ingresar la cantidad del producto");
                     return;
                 }
 
                 if($precio == ""){
-                    echo json_encode("Debe ingresar un telefono");
+                    echo json_encode("Debe ingresar el precio del producto");
                     return;
                 }
 
                 if($precioTotal == ""){
-                    echo json_encode("Debe ingresar el correo electronico");
+                    echo json_encode("Debe ingresar el precio total");
                     return;
                 }
 
                 if($idCliente == ""){
-                    echo json_encode("Debe ingresar el numero de documento");
+                    echo json_encode("Debe ingresar el nombre del cliente");
                     return;
                 }
                 
                 if($idProduto == ""){
-                    echo json_encode("Debe ingresar el tipo de documento");
+                    echo json_encode("Debe ingresar el nombre del producto");
                     return;
                 }
 
@@ -63,32 +63,32 @@
                 $idSalida = $_POST["idSalida"];
 
                 if($fechaSalida == ""){
-                    echo json_encode("Debe ingresar los nombres de la persona");
+                    echo json_encode("Debe ingresar una fecha");
                     return;
                 }
 
                 if($cantidad == ""){
-                    echo json_encode("Debe ingresar los apellidos de la persona");
+                    echo json_encode("Debe ingresar una cantidad");
                     return;
                 }
 
                 if($precio == ""){
-                    echo json_encode("Debe ingresar un telefono");
+                    echo json_encode("Debe ingresar un precio");
                     return;
                 }
 
                 if($precioTotal == ""){
-                    echo json_encode("Debe ingresar el correo electronico");
+                    echo json_encode("Debe ingresar el total");
                     return;
                 }
 
                 if($idCliente == ""){
-                    echo json_encode("Debe ingresar el numero de documento");
+                    echo json_encode("Debe seleccionar el nombre del cliente");
                     return;
                 }
                 
                 if($idProduto == ""){
-                    echo json_encode("Debe ingresar el tipo de documento");
+                    echo json_encode("Debe seleccionar el nombre del producto");
                     return;
                 }
 

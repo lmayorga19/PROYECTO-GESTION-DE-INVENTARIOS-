@@ -1,4 +1,4 @@
-var url = '../../controller/exit/salidaControlador.php';
+var url = '../../controller/product/productoControlador.php';
 
 $(document).ready(function () {
   Consultar();
@@ -15,48 +15,46 @@ function Consultar() {
       var html = '';
       $.each(response, function (index, data) {
         html += '<tr>';
-        html += '<td>' + data.fechaSalida + '</td>';
-        html += '<td>' + data.cantidad + '</td>';
+        html += '<td>' + data.nombreProducto + '</td>';
+        html += '<td>' + data.existencia + '</td>';
+        html += '<td>' + data.marca + '</td>';
         html += '<td>' + data.precio + '</td>';
-        html += '<td>' + data.precioTotal + '</td>';
-        html += '<td>' + data.idCliente + '</td>';
-        html += '<td>' + data.idProducto + '</td>';
+        html += '<td>' + data.ultimoCosto + '</td>';
         html += '<td>';
         html +=
           "<button class='btn btn-warning' onclick='ConsultarPorId(" +
-          data.idSalida +
+          data.idProducto +
           ");'><span class='fa fa-edit'></span> Modificar</button>";
         html +=
           "<button class='btn btn-danger' onclick='Eliminar(" +
-          data.idSalida +
+          data.idProducto +
           ");'><span class='fa fa-trash'></span> Eliminar</button>";
         html += '</td>';
         html += '</tr>';
       });
 
       document.getElementById('datos').innerHTML = html;
-      $('#tablaSalida').DataTable();
+      $('#tablaProducto').DataTable();
     })
     .fail(function (response) {
       console.log(response);
     });
 }
 
-function ConsultarPorId(idSalida) {
+function ConsultarPorId(idProducto) {
   $.ajax({
     url: url,
-    data: { idSalida: idSalida, accion: 'CONSULTAR_ID' },
+    data: { idProducto: idProducto, accion: 'CONSULTAR_ID' },
     type: 'POST',
     dataType: 'json',
   })
     .done(function (response) {
-      document.getElementById('fechaSalida').value = response.fechaSalida;
-      document.getElementById('cantidad').value = response.cantidad;
+      document.getElementById('nombreProducto').value = response.nombreProducto;
+      document.getElementById('existencia').value = response.existencia;
+      document.getElementById('marca').value = response.marca;
       document.getElementById('precio').value = response.precio;
-      document.getElementById('precioTotal').value = response.precioTotal;
-      document.getElementById('idCliente').value = response.idCliente;
+      document.getElementById('ultimoCosto').value = response.ultimoCosto;
       document.getElementById('idProducto').value = response.idProducto;
-      document.getElementById('idSalida').value = response.idSalida;
       BloquearBotones(false);
     })
     .fail(function (response) {
@@ -106,10 +104,10 @@ function Modificar() {
     });
 }
 
-function Eliminar(idSalida) {
+function Eliminar(idProducto) {
   $.ajax({
     url: url,
-    data: { idSalida: idSalida, accion: 'ELIMINAR' },
+    data: { idProducto: idProducto, accion: 'ELIMINAR' },
     type: 'POST',
     dataType: 'json',
   })
@@ -127,20 +125,18 @@ function Eliminar(idSalida) {
 }
 
 function Validar() {
-  fechaSalida = document.getElementById('fechaSalida').value;
-  cantidad = document.getElementById('cantidad').value;
+  nombreProducto = document.getElementById('nombreProducto').value;
+  existencia = document.getElementById('existencia').value;
+  marca = document.getElementById('marca').value;
   precio = document.getElementById('precio').value;
-  precioTotal = document.getElementById('precioTotal').value;
-  idCliente = document.getElementById('idCliente').value;
-  idProducto = document.getElementById('idProducto').value;
+  ultimoCosto = document.getElementById('ultimoCosto').value;
 
   if (
-    fechaSalida == '' ||
-    cantidad == '' ||
+    nombreProducto == '' ||
+    existencia == '' ||
+    marca == '' ||
     precio == '' ||
-    precioTotal == '' ||
-    idCliente == '' ||
-    idProducto == ''
+    ultimoCosto == ''
   ) {
     return false;
   }
@@ -149,24 +145,22 @@ function Validar() {
 
 function retornarDatos(accion) {
   return {
-    fechaSalida: document.getElementById('fechaSalida').value,
-    cantidad: document.getElementById('cantidad').value,
+    nombreProducto: document.getElementById('nombreProducto').value,
+    existencia: document.getElementById('existencia').value,
+    marca: document.getElementById('marca').value,
     precio: document.getElementById('precio').value,
-    precioTotal: document.getElementById('precioTotal').value,
-    idCliente: document.getElementById('idCliente').value,
-    idProducto: document.getElementById('idProducto').value,
+    ultimoCosto: document.getElementById('ultimoCosto').value,
     accion: accion,
-    idSalida: document.getElementById('idSalida').value,
+    idProducto: document.getElementById('idProducto').value,
   };
 }
 
 function Limpiar() {
-  document.getElementById('fechaSalida').value = '';
-  document.getElementById('cantidad').value = '';
+  document.getElementById('nombreProducto').value = '';
+  document.getElementById('existencia').value = '';
+  document.getElementById('marca').value = '';
   document.getElementById('precio').value = '';
-  document.getElementById('precioTotal').value = '';
-  document.getElementById('idCliente').value = '';
-  document.getElementById('idProducto').value = '';
+  document.getElementById('ultimoCosto').value = '';
   BloquearBotones(true);
 }
 
