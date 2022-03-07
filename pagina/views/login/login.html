@@ -10,6 +10,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./../../css/iniciarSesion.css">
+
+     <!--ESTILOS CSS BOOTSTRAP-->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+    <!--ESTILOS CSS ICONOS FONTAWESOME-->
+    <link rel="stylesheet" href="../../assets/css/all.min.css" />
+    <!--ESTILOS Sweet Alert-->
+    <link
+      rel="stylesheet"
+      href="../../assets/plugins/SweetAlert/dist/sweetalert2.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"
+    />
 </head>
 <body>
 <section>
@@ -25,15 +40,15 @@
 			 <div class="container">
 			 	<div class="form">
                  <h2>Iniciar Sesión</h2>
-    <form action="loginR.php" method="POST"> 
+    <form action="" method="POST"> 
     <div class="inputBox">
-        <input type="text"name= "usuario" placeholder="usuario">
+        <input type="text"name= "usuario" id="usuario" placeholder="usuario">
     </div>
         <div  class="inputBox">
-        <input type="password" name="clave" placeholder="clave">
+        <input type="password" name="contrasena" id="contrasena" placeholder="clave">
      </div>
      <div  class="inputBox">
-        <button name="ingresar">iniciar Sesion</button>
+        <button name="ingresar" onclick="IniciarSesion();">iniciar Sesion</button>
 </div>
 <p class="forget">
 	Has olvidado tu contraseña? <a href="recuperar.html">Recuperar contraseña</a>
@@ -45,4 +60,11 @@
     </form>
     
 </body>
+  <script src="../../assets/js/all.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/jquery.js"></script>
+  <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="../../js/login.js"></script>
+  <script src="../../assets/plugins/SweetAlert/dist/sweetalert2.all.min.js"></script>
+
 </html>

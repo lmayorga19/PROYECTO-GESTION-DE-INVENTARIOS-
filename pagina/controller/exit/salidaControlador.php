@@ -1,102 +1,103 @@
 <?php
 
-    require '../../models/supplierModel.php';     
+    require '../../models/exitModel.php';     
 
     if($_POST){
-        $persona = new Proveedor();
+        $persona = new Salida();
 
         switch($_POST["accion"]){
             case "CONSULTAR":
                 echo json_encode($persona->ConsultarTodo());
             break;
             case "CONSULTAR_ID":
-                echo json_encode($persona->ConsultarPorId($_POST["idProveedor"]));
+                echo json_encode($persona->ConsultarPorId($_POST["idSalida"]));
             break;
             case "GUARDAR":
-                $nombres = $_POST["nombres"];
-                $apellidos = $_POST["apellidos"];
-                $telefono = $_POST["telefono"];
-                $correo = $_POST["correo"];
-                $documento = $_POST["documento"];
-                $tipoDocumento = $_POST["tipoDocumento"];
+                $fechaSalida = $_POST["fechaSalida"];
+                $cantidad = $_POST["cantidad"];
+                $precio = $_POST["precio"];
+                $precioTotal = $_POST["precioTotal"];
+                $idCliente = $_POST["idCliente"];
+                $idProduto = $_POST["idProducto"];
 
-                if($nombres == ""){
+                if($fechaSalida == ""){
                     echo json_encode("Debe ingresar los nombres de la persona");
                     return;
                 }
 
-                if($apellidos == ""){
+                if($cantidad == ""){
                     echo json_encode("Debe ingresar los apellidos de la persona");
                     return;
                 }
 
-                if($telefono == ""){
+                if($precio == ""){
                     echo json_encode("Debe ingresar un telefono");
                     return;
                 }
 
-                if($correo == ""){
+                if($precioTotal == ""){
                     echo json_encode("Debe ingresar el correo electronico");
                     return;
                 }
 
-                if($documento == ""){
+                if($idCliente == ""){
                     echo json_encode("Debe ingresar el numero de documento");
                     return;
                 }
                 
-                if($tipoDocumento == ""){
+                if($idProduto == ""){
                     echo json_encode("Debe ingresar el tipo de documento");
                     return;
                 }
 
-                $respuesta = $persona->Guardar($nombres, $apellidos, $telefono, $correo, $documento, $tipoDocumento);
+                $respuesta = $persona->Guardar($fechaSalida, $cantidad, $precio, $precioTotal, $idCliente, $idProduto);
                 echo json_encode($respuesta);
             break;
             case "MODIFICAR":
-                $nombres = $_POST["nombres"];
-                $apellidos = $_POST["apellidos"];
-                $telefono = $_POST["telefono"];
-                $correo = $_POST["correo"];
-                $documento = $_POST["documento"];
-                $tipoDocumento = $_POST["tipoDocumento"];
-                $idProveedor = $_POST["idProveedor"];
+                $fechaSalida = $_POST["fechaSalida"];
+                $cantidad = $_POST["cantidad"];
+                $precio = $_POST["precio"];
+                $precioTotal = $_POST["precioTotal"];
+                $idCliente = $_POST["idCliente"];
+                $idProduto = $_POST["idProducto"];
+                $idSalida = $_POST["idSalida"];
 
-                if($nombres == ""){
+                if($fechaSalida == ""){
                     echo json_encode("Debe ingresar los nombres de la persona");
                     return;
                 }
 
-                if($apellidos == ""){
+                if($cantidad == ""){
                     echo json_encode("Debe ingresar los apellidos de la persona");
                     return;
                 }
 
-                if($telefono == ""){
+                if($precio == ""){
                     echo json_encode("Debe ingresar un telefono");
                     return;
                 }
 
-                if($correo == ""){
+                if($precioTotal == ""){
                     echo json_encode("Debe ingresar el correo electronico");
                     return;
                 }
 
-                if($documento == ""){
+                if($idCliente == ""){
                     echo json_encode("Debe ingresar el numero de documento");
                     return;
                 }
                 
-                if($tipoDocumento == ""){
+                if($idProduto == ""){
                     echo json_encode("Debe ingresar el tipo de documento");
                     return;
                 }
-                $respuesta = $persona->Modificar($nombres, $apellidos, $telefono, $correo, $documento, $tipoDocumento,$idProveedor);
+
+                $respuesta = $persona->Modificar($fechaSalida, $cantidad, $precio, $precioTotal, $idCliente, $idProduto, $idSalida);
                 echo json_encode($respuesta);
             break;
             case "ELIMINAR":
-                $idProveedor = $_POST["idProveedor"];
-                $respuesta = $persona->Eliminar($idProveedor);
+                $idSalida = $_POST["idSalida"];
+                $respuesta = $persona->Eliminar($idSalida);
                 echo json_encode($respuesta);
             break;
         }

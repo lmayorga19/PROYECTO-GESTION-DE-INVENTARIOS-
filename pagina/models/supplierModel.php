@@ -1,8 +1,8 @@
 <?php
-   
+
     require 'conexion.php';
 
-    class Persona{
+    class Proveedor{
 
         public function ConsultarTodo(){
             $conexion = new Conexion();
