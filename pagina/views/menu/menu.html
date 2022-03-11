@@ -1,81 +1,274 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <title>Admin</title>
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link rel="stylesheet" href="./../../css/style.css">
-</head>
-
-<body>
-
-    <input type="checkbox" id="nav-toggle">
-    <div class="sidebar">
-        <div class="sidebar-brand">
-            <h2><span class="las la-clinic-medical"></span> <span>Johan Style</span></h2>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Dashboard using HTML CSS and Javascript</title>
+    <!-- MATERIAL CDN-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- STYLESHEET-->
+    <link rel="stylesheet" href="../../css/menu.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img
+              src="./Imagenes/png-transparent-rose-rose-graphic-logo-flower.png"
+            />
+            <h2>EGA<span class="danger">TOR</span></h2>
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp">close</span>
+          </div>
         </div>
-        <!--Secciones-del-tablero-->
-        
 
-        <div class="sidebar-menu">
-            <ul>
-                <li>
-                    <a href="" class="active"><span class="las la-home"></span>
-                    <span>Inicio</span></a>
-                    
-                </li>
-                <li>
-                    <a  href="./../supplier/formulario_provedor.php" rel="import"><span class="las la-car"></span>
-                    <span>Gestion Provedor</span></a> 
-                </li>
-                <li>
-                    <a href="formulario_cliente.php"><span class="las la-user"></span>
-                    <span>Gestion Cliente</span></a>
-                </li>
-                <li>
-                    <a href="formulario_entrada.php"><span class="las la-book"></span>
-                    <span>Entrada de producto</span></a>
-                </li>
-                <li>
-                    <a href="formulario_salida.php"><span class="las la-book"></span>
-                    <span>salida de producto</span></a>
-                </li>
-                <li>
-                    <a href="formulario_producto.php"><span class="las la-history"></span>
-                    <span>Gestion Producto</span></a>
-                </li>
-            </ul>
+        <div class="sidebar">
+          <a href="#" class="active">
+            <span class="material-icons-sharp"> grid_view</span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="../supplier/proveedorv1.html" target="fragmento">
+            <span class="material-icons-sharp">groups</span>
+            <h3>Proveedor</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">person</span>
+            <h3>Clientes</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp"> inventory </span>
+            <h3>Entrada de Producto</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">rule_folder </span>
+            <h3>Salida de Producto</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp"> inventory_2</span>
+            <h3>Gestion de Producto</h3>
+          </a>
+
+          <a href="#">
+            <span class="material-icons-sharp"> logout</span>
+            <h3>logout</h3>
+          </a>
         </div>
-    </div>
-    <!-- <iframe class="caja" src="formulario_cliente.html"></iframe> -->
-
-    <div class="main-content">
-        <header>
-            <h2>
-                <label for="nav-toggle">
-                    <span class="las la-bars"></span>
-                </label> Inicio
-            </h2>
-
-            <div class="search-wrapper">
-                <span class="las la-search"></span>
-                <input type="search" placeholder="Buscar aquí" />
-            </div>
-            <div class="user-wrapper">
-                <img src="../img/Avatar.png" width="40px" height="40px" alt="">
-                <div>
-                    <h4>Administrador</h4>
-                    <a href="../index.html">Cerrar Sesión</a>
+      </aside>
+      <!----------------------------------END OF ASIDE------------------------------------------------>
+      <main>
+        <h1>Dashboard</h1>
+        <div class="date">
+          <input type="date" />
+        </div>
+        <div class="insights">
+          <div class="sales">
+            <span class="material-icons-sharp"> analytics </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Total sales</h3>
+                <h1>$25,024</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38 " r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>81%</p>
                 </div>
+              </div>
             </div>
-        </header>
-        <img src="../img/bienvenida.jpg" alt="">
+            <small class="text-muted">Las 24 Hours </small>
+          </div>
 
+          <!--------------------END OF SALES----------------------------------------------------------------->
+          <div class="expenses">
+            <span class="material-icons-sharp"> bar_chart </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Total Expenses</h3>
+                <h1>$14,024</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38 " r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>62%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Las 24 hours</small>
+          </div>
+          <!-------------------------------------- END OF EXPENSES----------------------->
+
+          <div class="income">
+            <span class="material-icons-sharp"> stacked_line_chart </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Total Income</h3>
+                <h1>$10,864</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38 " r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>44%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Las 24 hours </small>
+          </div>
+          <!---------------------END OF INCOME-------------------------------------------------->
+        </div>
+        <!------------------END OF INSIGHTS------------------------------------------->
+        <div class="recent-orders">
+          <h2>Recent Orders</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>Product Number</th>
+                <th>Payment</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+          </table>
+          <a href="#">Show All</a>s
+        </div>
+      </main>
+      <!----------------------------------END OF MAIN--------------------------------------->
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp">menu</span>
+          </button>
+          <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p>hey, <b> Daniel </b></p>
+              <small class="text-muted">Admins</small>
+            </div>
+            <div class="profile-photo">
+              <img src="./Imagenes/images.jpg" />
+            </div>
+          </div>
+        </div>
+        <!-----------------------------END OF TOP-------------------->
+        <div class="recent-updates">
+          <h2>Recent Updates</h2>
+          <div class="updates">
+            <div class="update">
+              <div class="profile-photo">
+                <img src="./Imagenes/images1.jph.png" />
+              </div>
+              <div class="message">
+                <p>
+                  <b>Mike Tyson</b> received his order of Ningt lion tech GPS
+                  drone
+                </p>
+                <small class="text-muted"> 2 minutes Ago</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="./Imagenes/images3.jpg" />
+              </div>
+              <div class="message">
+                <p>
+                  <b>Mike Tyson</b> received his order of Ningt lion tech GPS
+                  drone
+                </p>
+                <small class="text-muted"> 2 minutes Ago</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="./Imagenes/images2.jpg" />
+              </div>
+              <div class="message">
+                <p>
+                  <b>Mike Tyson</b> received his order of Ningt lion tech GPS
+                  drone
+                </p>
+                <small class="text-muted"> 2 minutes Ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!------------------------------------END OF RECENT UPDATES--------------->
+        <div class="sales-analytics">
+          <h2>Sales Analytics</h2>
+          <div class="item online">
+            <div class="icon">
+              <span class="material-icons-sharp">shopping_cart </span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>ONLINE ORDERS</h3>
+                <small class="text-muted">Last 24 Hours </small>
+              </div>
+              <h5 class="success">+39%</h5>
+              <h3>3849</h3>
+            </div>
+          </div>
+
+          <div class="item offline">
+            <div class="icon">
+              <span class="material-icons-sharp">local_mall </span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>OFFLINE ORFERS</h3>
+                <small class="text-muted">Last 24 Hours </small>
+              </div>
+              <h5 class="danger">-17%</h5>
+              <h3>1100</h3>
+            </div>
+          </div>
+
+          <div class="item customers">
+            <div class="icon">
+              <span class="material-icons-sharp">person</span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>NEW CUSTOMERS</h3>
+                <small class="text-muted">Last 24 Hours</small>
+              </div>
+              <h5 class="success">+25%</h5>
+              <h3>849</h3>
+            </div>
+          </div>
+
+          <div class="item add-product">
+            <div>
+              <span class="material-icons-sharp">add</span>
+              <h3>Add Products</h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-</body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae veritatis
+      facilis molestiae praesentium consequuntur error harum, accusantium magnam
+      suscipit accusamus, rerum quia iure qui odit distinctio, similique ab
+      nobis labore?
+    </p>
+  </body>
 
+  <script src="orders.js"></script>
+  <script src="../../js/index.js"></script>
 </html>
