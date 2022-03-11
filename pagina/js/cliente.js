@@ -1,4 +1,4 @@
-var url = '../../controller/entry/entrada.controlador.php';
+var url = '../../controller/client/clienteControlador.php';
 
 $(document).ready(function () {
   Consultar();
@@ -15,48 +15,52 @@ function Consultar() {
       var html = '';
       $.each(response, function (index, data) {
         html += '<tr>';
-        html += '<td>' + data.fechaEntrada + '</td>';
-        html += '<td>' + data.cantidad + '</td>';
-        html += '<td>' + data.precio + '</td>';
-        html += '<td>' + data.precioTotal + '</td>';
-        html += '<td>' + data.idProveedor + '</td>';
-        html += '<td>' + data.idProducto + '</td>';
+        html += '<td>' + data.nombresClientes + '</td>';
+        html += '<td>' + data.apellidosClientes + '</td>';
+        html += '<td>' + data.direccion + '</td>';
+        html += '<td>' + data.correo + '</td>';
+        html += '<td>' + data.telefono + '</td>';
+        html += '<td>' + data.documento + '</td>';
+        html += '<td>' + data.tipoDocumento + '</td>';
         html += '<td>';
         html +=
           "<button class='btn btn-warning' onclick='ConsultarPorId(" +
-          data.idEntrada +
+          data.idCliente +
           ");'><span class='fa fa-edit'></span> Modificar</button>";
         html +=
           "<button class='btn btn-danger' onclick='Eliminar(" +
-          data.idEntrada +
+          data.idCliente +
           ");'><span class='fa fa-trash'></span> Eliminar</button>";
         html += '</td>';
         html += '</tr>';
       });
 
       document.getElementById('datos').innerHTML = html;
-      $('#tablaEntrada').DataTable();
+      $('#tablaCliente').DataTable();
     })
     .fail(function (response) {
       console.log(response);
     });
 }
 
-function ConsultarPorId(idEntrada) {
+function ConsultarPorId(idCliente) {
   $.ajax({
     url: url,
-    data: { idEntrada: idEntrada, accion: 'CONSULTAR_ID' },
+    data: { idCliente: idCliente, accion: 'CONSULTAR_ID' },
     type: 'POST',
     dataType: 'json',
   })
     .done(function (response) {
-      document.getElementById('fechaEntrada').value = response.fechaEntrada;
-      document.getElementById('cantidad').value = response.cantidad;
-      document.getElementById('precio').value = response.precio;
-      document.getElementById('precioTotal').value = response.precioTotal;
-      document.getElementById('idProveedor').value = response.idProveedor;
-      document.getElementById('idProducto').value = response.idProducto;
-      document.getElementById('idEntrada').value = response.idEntrada;
+      document.getElementById('nombresClientes').value =
+        response.nombresClientes;
+      document.getElementById('apellidosClientes').value =
+        response.apellidosClientes;
+      document.getElementById('direccion').value = response.direccion;
+      document.getElementById('correo').value = response.correo;
+      document.getElementById('telefono').value = response.telefono;
+      document.getElementById('documento').value = response.documento;
+      document.getElementById('tipoDocumento').value = response.tipoDocumento;
+      document.getElementById('idCliente').value = response.idCliente;
       BloquearBotones(false);
     })
     .fail(function (response) {
@@ -106,10 +110,10 @@ function Modificar() {
     });
 }
 
-function Eliminar(idEntrada) {
+function Eliminar(idCliente) {
   $.ajax({
     url: url,
-    data: { idEntrada: idEntrada, accion: 'ELIMINAR' },
+    data: { idCliente: idCliente, accion: 'ELIMINAR' },
     type: 'POST',
     dataType: 'json',
   })
@@ -127,20 +131,22 @@ function Eliminar(idEntrada) {
 }
 
 function Validar() {
-  fechaEntrada = document.getElementById('fechaEntrada').value;
-  cantidad = document.getElementById('cantidad').value;
-  precio = document.getElementById('precio').value;
-  precioTotal = document.getElementById('precioTotal').value;
-  idProveedor = document.getElementById('idProveedor').value;
-  idProducto = document.getElementById('idProducto').value;
+  nombresClientes = document.getElementById('nombresClientes').value;
+  apellidosClientes = document.getElementById('apellidosClientes').value;
+  direccion = document.getElementById('direccion').value;
+  correo = document.getElementById('correo').value;
+  telefono = document.getElementById('telefono').value;
+  documento = document.getElementById('documento').value;
+  tipoDocumento = document.getElementById('tipoDocumento').value;
 
   if (
-    fechaEntrada == '' ||
-    cantidad == '' ||
-    precio == '' ||
-    precioTotal == '' ||
-    idProveedor == '' ||
-    idProducto == ''
+    nombresClientes == '' ||
+    apellidosClientes == '' ||
+    direccion == '' ||
+    correo == '' ||
+    telefono == '' ||
+    documento == '' ||
+    tipoDocumento == ''
   ) {
     return false;
   }
@@ -149,24 +155,26 @@ function Validar() {
 
 function retornarDatos(accion) {
   return {
-    fechaEntrada: document.getElementById('fechaEntrada').value,
-    cantidad: document.getElementById('cantidad').value,
-    precio: document.getElementById('precio').value,
-    precioTotal: document.getElementById('precioTotal').value,
-    idProveedor: document.getElementById('idProveedor').value,
-    idProducto: document.getElementById('idProducto').value,
+    nombresClientes: document.getElementById('nombresClientes').value,
+    apellidosClientes: document.getElementById('apellidosClientes').value,
+    direccion: document.getElementById('direccion').value,
+    correo: document.getElementById('correo').value,
+    telefono: document.getElementById('telefono').value,
+    documento: document.getElementById('documento').value,
+    tipoDocumento: document.getElementById('tipoDocumento').value,
     accion: accion,
-    idEntrada: document.getElementById('idEntrada').value,
+    idCliente: document.getElementById('idCliente').value,
   };
 }
 
 function Limpiar() {
-  document.getElementById('fechaEntrada').value = '';
-  document.getElementById('cantidad').value = '';
-  document.getElementById('precio').value = '';
-  document.getElementById('precioTotal').value = '';
-  document.getElementById('idProveedor').value = '';
-  document.getElementById('idProducto').value = '';
+  document.getElementById('nombresClientes').value = '';
+  document.getElementById('apellidosClientes').value = '';
+  document.getElementById('direccion').value = '';
+  document.getElementById('correo').value = '';
+  document.getElementById('telefono').value = '';
+  document.getElementById('documento').value = '';
+  document.getElementById('tipoDocumento').value = '';
   BloquearBotones(true);
 }
 
