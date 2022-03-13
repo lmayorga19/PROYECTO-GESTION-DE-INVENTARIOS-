@@ -1,5 +1,5 @@
 <?php
-    require_once '../modelo/login.modelo.php';
+    require_once '../models/login.modelo.php';
 
     if($_POST){
         $usuario = $_POST["usuario"];

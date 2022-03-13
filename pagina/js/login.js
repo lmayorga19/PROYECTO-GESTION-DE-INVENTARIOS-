@@ -1,20 +1,20 @@
 function IniciarSesion() {
   var usuario = document.getElementById('usuario').value;
-  var contrasena = document.getElementById('contrasena').value;
+  var clave = document.getElementById('clave').value;
 
   if (usuario == '') {
     alert('Debe ingresar usuario');
     return;
   }
 
-  if (contrasena == '') {
+  if (clave == '') {
     alert('Debe ingresar contraseña');
     return;
   }
 
   var datos = {
     usuario: usuario,
-    clave: contrasena,
+    clave: clave,
   };
 
   $.ajax({
@@ -26,7 +26,7 @@ function IniciarSesion() {
     .done(function (data) {
       if (data == 'OK') {
         alert('Sesion iniciada');
-        window.location = '../index.php';
+        window.location = '../../views/menu/menu.html';
       } else {
         alert(data);
       }

@@ -14,14 +14,14 @@
                 return "El usuario no existe";
             }else{
                 //validar la contraseña
-                $clave = md5($clave);
+                
                 if($obj_usuario->clave !== $clave){
                     // retornamos mensaje que la contraseña no coincide
                     return "La contraseña ingresada no coincide";
                 }
 
                 session_start();
-                $_SESSION["usuario"] = $obj_usuario->usuario;
+                $_SESSION["idUsuario"] = $obj_usuario->idUsuario;
                 $_SESSION["usuario"] = $obj_usuario->usuario;
                 return "OK";
             }
