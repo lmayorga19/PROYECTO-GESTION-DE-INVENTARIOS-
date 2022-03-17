@@ -4,7 +4,7 @@
 
         public function __construct(){
             try{
-                parent::__construct('mysql:host=localhost;dbname=johanstyle', 'root', 'angeles-32');
+                parent::__construct('mysql:host=localhost;dbname=johanstyle', 'root', '');
                 parent::exec("set names utf8");
             }catch(PDOException $e){
                 echo "Error al conectar " . $e->getMessage();

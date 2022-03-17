@@ -3,10 +3,10 @@
         <nav>
             <!-- <a href="#">Inicio</a>
             <a href="#">Acerca de</a> -->
-            <a href="formulario/formulario_contacto.html">Contacto</a>
-            <a href="formulario/CatalogoProductos.html">Productos</a>
+            <a href="./views/contact/formulario_contacto.html">Contacto</a>
+            <a href="./views/viewsProduct/CatalogoProductos.html">Productos</a>
 
-            <a href="./views/login/login.php">iniciar sesión</a>
+            <a href="./views/login/login.html">iniciar sesión</a>
           
         </nav>
         <section class="textos-header">
