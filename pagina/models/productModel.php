@@ -11,7 +11,7 @@
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
 
-        public function ConsultarPorId($idProveedor){
+        public function ConsultarPorId($idProducto){
             $conexion = new Conexion();
             $stmt = $conexion->prepare("SELECT * FROM producto where idProducto = :idProducto");
             $stmt->bindValue(":idProducto", $idProducto, PDO::PARAM_INT);

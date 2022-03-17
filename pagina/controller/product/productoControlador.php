@@ -53,7 +53,7 @@
                 $marca = $_POST["marca"];
                 $precio = $_POST["precio"];
                 $ultimoCosto = $_POST["ultimoCosto"];
-                $idProduto = $_POST["idProducto"];
+                $idProducto = $_POST["idProducto"];
 
                 if($nombreProducto == ""){
                     echo json_encode("Debe ingresar el nombre del producto");
@@ -75,7 +75,7 @@
                     return;
                 }
 
-                if($ultimocosto == ""){
+                if($ultimoCosto == ""){
                     echo json_encode("Debe ingresar el ultimo costo");
                     return;
                 }

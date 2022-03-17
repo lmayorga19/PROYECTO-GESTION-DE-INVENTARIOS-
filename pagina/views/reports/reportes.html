@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/boton.css" />
     <title>Chart MySQL</title>
 
     <style></style>
   </head>
+
   <body>
     <canvas
       id="myChart"
@@ -45,7 +47,7 @@
         },
       });
 
-      let url = 'http://localhost/apirest/articulos.php';
+      let url = 'http://localhost/apiRest/articulos.php';
       fetch(url)
         .then((response) => response.json())
         .then((datos) => mostrar(datos))
@@ -60,5 +62,12 @@
         console.log(myChart.data);
       };
     </script>
+
+    <div class="button">
+      <div class="container">
+        <div class="tick"></div>
+      </div>
+    </div>
   </body>
+  <script src="../../js/button.js"></script>
 </html>
