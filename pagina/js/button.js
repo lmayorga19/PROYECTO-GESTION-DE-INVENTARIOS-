@@ -14,7 +14,7 @@ button.addEventListener('click', function () {
   }
 
   setTimeout(function () {
-    window.location = './index.php';
+    window.location = './reportespdf.php';
   }, 1250);
 
   this.classList.toggle('button__circle');
