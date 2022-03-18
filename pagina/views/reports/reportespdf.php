@@ -1,6 +1,6 @@
 <?php
 require('../../assets/fpdf/fpdf.php');
-date_default_timezone_set('America/El_Salvador');
+date_default_timezone_set('America/Bogota');
 
 class PDF extends FPDF
 {
@@ -22,18 +22,18 @@ class PDF extends FPDF
 function Header()
 {
 $this->Image('../../img/waves.png',-10,-1,110);
-$this->Image('../../img/logo_login.png',150,15,25);
+$this->Image('../../img/logo_login.png',130,30,60);
 $this->SetY(40);
 $this->SetX(128);
 
 $this->SetFont('Arial','B',12);
-$this->Cell(89, 8, 'REPORTE DE PRODUCTOS',0,1);
+$this->Cell(89, 80, 'REPORTE DE PRODUCTOS',0,1);
 $this->SetY(45);
 $this->SetX(144);
 $this->SetFont('Arial','',8);
-$this->Cell(40, 8, utf8_decode('Gestion de Inventario'));
+$this->Cell(40, 85, utf8_decode('Gestion de Inventario'));
 
-$this->Ln(20);
+$this->Ln(60);
 
 }
 
@@ -84,13 +84,10 @@ while ($row=$resultado->fetch_assoc()) { // Se realiza ciclo while para obtener 
 
   //-------------INTERCALAMOS COLOR LOS PARES DE UN COLOR Y LOS QUE NO DE OTRO
 
-if($row%2==0){
-$pdf->SetFillColor(232, 232, 232 );
-$pdf->SetDrawColor(65, 61, 61);
-}else{
+
 $pdf->SetFillColor(255, 255, 255 );
-$pdf->SetDrawColor(65, 61, 61);
-}
+
+
 //--------------------------------TERMINAMOS DE PINTAR----------------------------
 
 //                          DATOS
