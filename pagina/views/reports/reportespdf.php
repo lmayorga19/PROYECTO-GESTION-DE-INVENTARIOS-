@@ -22,7 +22,7 @@ class PDF extends FPDF
 function Header()
 {
 $this->Image('../../img/waves.png',-10,-1,110);
-$this->Image('../../img/logo_login.png',130,30,60);
+$this->Image('../../img/logo.johan.png',125,30,60);
 $this->SetY(40);
 $this->SetX(128);
 
