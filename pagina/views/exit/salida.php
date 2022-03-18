@@ -2,7 +2,7 @@
   $dbhost ="localhost";
     $dbuser = "root";
     $dbpass = "";
-    $dbname = "dbjohanstyle";
+    $dbname = "johanstyle";
 
     $conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 ?>
@@ -42,9 +42,7 @@
 
           <div class="row">
             <div class="btn-group-sm">
-              <button class="btn btn-outline-info" onclick="Consultar();">
-                <span class="fa fa-search"></span> Consultar
-              </button>
+              
               <button
                 class="btn btn-outline-info"
                 id="guardar"
