@@ -8,6 +8,7 @@
     <title>Johan Style</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
+    <link rel="shortcut icon" href="./img/logo_login.png">
 </head>
 
 <body>

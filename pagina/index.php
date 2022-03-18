@@ -7,8 +7,8 @@
             <a href="./views/viewsProduct/CatalogoProductos.html">Productos</a>
 
             <a href="./views/login/login.html">iniciar sesión</a>
-          
-        </nav>
+            
+         
         <section class="textos-header">
             <h1>PELUQUERÍA JOHAN STYLE</h1>
             <h2>Te ofrecemos gran variedad de productos de belleza</h2>
