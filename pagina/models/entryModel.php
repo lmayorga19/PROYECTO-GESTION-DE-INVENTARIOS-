@@ -19,7 +19,7 @@
             return $stmt->fetch(PDO::FETCH_OBJ);
         }
 
-        public function Guardar($fechaEntrada, $cantidad, $precio, $precioTotal, $idProveedor, $idProduto){
+        public function Guardar($fechaEntrada, $cantidad, $precio, $precioTotal, $idProveedor, $idProducto){
 
             $conexion = new Conexion();
             $stmt = $conexion->prepare("INSERT INTO `entrada`
@@ -29,7 +29,7 @@
                                                 `precioTotal`,
                                                 `idProveedor`,
                                                 `idProducto`)
-                                    VALUES (:fechaSalida,
+                                    VALUES (:fechaEntrada,
                                             :cantidad,
                                             :precio,
                                             :precioTotal,
@@ -40,7 +40,7 @@
             $stmt->bindValue(":precio", $precio, PDO::PARAM_STR);
             $stmt->bindValue(":precioTotal", $precioTotal, PDO::PARAM_STR);
             $stmt->bindValue(":idProveedor", $idProveedor, PDO::PARAM_STR);
-            $stmt->bindValue(":idProducto", $idProduto, PDO::PARAM_STR);
+            $stmt->bindValue(":idProducto", $idProducto, PDO::PARAM_STR);
 
             if($stmt->execute()){
                 return "OK";
@@ -50,7 +50,7 @@
 
         }
 
-        public function Modificar($fechaSalida, $cantidad, $precio, $precioTotal, $idProveedor, $idProduto, $idEntrada){
+        public function Modificar($fechaEntrada, $cantidad, $precio, $precioTotal, $idProveedor, $idProducto, $idEntrada){
 
             $conexion = new Conexion();
             $stmt = $conexion->prepare("UPDATE `entrada`
@@ -61,12 +61,12 @@
                                         `idProveedor` = :idProveedor,
                                         `idProducto`=:idProducto
                                         WHERE `idEntrada` = :idEntrada;");
-            $stmt->bindValue(":fechaSalida", $fechaSalida, PDO::PARAM_STR);
+            $stmt->bindValue(":fechaEntrada", $fechaEntrada, PDO::PARAM_STR);
             $stmt->bindValue(":cantidad", $cantidad, PDO::PARAM_STR);
             $stmt->bindValue(":precio", $precio, PDO::PARAM_STR);
             $stmt->bindValue(":precioTotal", $precioTotal, PDO::PARAM_STR);
             $stmt->bindValue(":idProveedor", $idProveedor, PDO::PARAM_STR);
-            $stmt->bindValue(":idProducto", $idProduto, PDO::PARAM_STR);
+            $stmt->bindValue(":idProducto", $idProducto, PDO::PARAM_STR);
             $stmt->bindValue(":idEntrada", $idEntrada, PDO::PARAM_STR);
 
             if($stmt->execute()){

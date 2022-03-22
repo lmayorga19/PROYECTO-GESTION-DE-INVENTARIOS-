@@ -1,7 +1,7 @@
 <?php
   $dbhost ="localhost";
     $dbuser = "root";
-    $dbpass = "";
+    $dbpass = "angeles-32";
     $dbname = "johanstyle";
 
     $conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
@@ -106,28 +106,38 @@
               />
             </div>
           </div>
-
-
-        <select class="form-control mb-3" name="idCliente" id="idCliente" require>
-        <option value="0">Seleccione cliente</option>
-        <?php 
-        $proveedor="SELECT idCliente, nombresClientes, apellidosClientes FROM cliente;";
+          <div class="row">
+            <div class="col-md-6">
+               <label for="nombreCliente">Nombre del Cliente:</label>
+                <select class="form-control mb-3" name="idCliente" id="idCliente" require>
+                     <option value="">Seleccione cliente</option>
+                       <?php 
+                         $proveedor="SELECT idCliente, nombresClientes, apellidosClientes FROM cliente;";
                          $res = mysqli_query($conn, $proveedor);
                         while($valores=mysqli_fetch_array($res)){
                           echo '<option value= "'.$valores[0].'">'.$valores[1].' '.$valores[2].'</option>';
                           }
                          ?>
-        </select>
-         <select class="form-control mb-3" name="idProducto" id="idProducto" require>
-                          <option value="">Seleccione producto</option>
-                            <?php 
-                              $producto="SELECT idProducto, nombreProducto FROM producto;                              ";
-                              $ress = mysqli_query($conn, $producto);
-                             while($valore=mysqli_fetch_array($ress)){
-                               echo '<option value= "'.$valore[0].'">'.$valore[1].'</option>';
+                  </select>
+            </div>
+            <div class="col-md-6">
+                   <label for="nombreProducto">Nombre del Producto:</label>
+                  <select class="form-control mb-3" name="idProducto" id="idProducto" require>
+                        <option value="">Seleccione producto</option>
+                         <?php 
+                         $producto="SELECT idProducto, nombreProducto FROM producto;                              ";
+                         $ress = mysqli_query($conn, $producto);
+                          while($valore=mysqli_fetch_array($ress)){
+                              echo '<option value= "'.$valore[0].'">'.$valore[1].'</option>';
                                }
-                            ?>
-                           </select>
+                        ?>
+                    </select>
+            </div>
+          </div>
+
+
+        
+
 
         </div>
         <div class="card-footer">

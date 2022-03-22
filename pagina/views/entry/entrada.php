@@ -1,3 +1,11 @@
+<?php
+  $dbhost ="localhost";
+    $dbuser = "root";
+    $dbpass = "angeles-32";
+    $dbname = "johanstyle";
+
+    $conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -100,29 +108,35 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <label for="nombreProveedor">Nombre del Proveedor::</label>
-              <input
-                type="number"
-                name="idProveedor"
-                id="idProveedor"
-                placeholder="Por favor seleccione el nombre del proveedor"
-                class="form-control"
-              />
+              <label for="nombreProveedor">Nombre del Proveedor:</label>
+              <select class="form-control mb-3" name="idProveedor" id="idProveedor" require>
+                    <option value="">Seleccione Proveedor</option>
+                    <?php 
+                    $proveedor="SELECT idProveedor, nombres from proveedor; ";
+                    $res = mysqli_query($conn, $proveedor);
+                    while($valores=mysqli_fetch_array($res)){
+                        echo '<option value= "'.$valores[0].'">'.$valores[1].'</option>';
+                    }
+                    ?>
+                    </select>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
+             <div class="col-md-6">
               <label for="nombreProducto">Nombre del Producto:</label>
-              <input
-                type="number"
-                name="idProducto"
-                id="idProducto"
-                placeholder="Por favor seleccione el nombre del producto"
-                class="form-control"
-                autofocus
-              />
+               <select class="form-control mb-3" name="idProducto" id="idProducto" require>
+                    <option value="">Seleccione producto</option>
+                    <?php 
+                    $producto="SELECT idProducto,nombreProducto from producto; ";
+                    $ress = mysqli_query($conn, $producto);
+                    while($valore=mysqli_fetch_array($ress)){
+                        echo '<option value= "'.$valore[0].'">'.$valore[1].'</option>';
+                    }
+                    ?>
+                    </select>
             </div>
           </div>
+          
+           
+         
         </div>
         <div class="card-footer">
           <table class="table table-striped" id="tablaPersona">

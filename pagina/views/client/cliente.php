@@ -109,8 +109,6 @@
                 class="form-control"
               />
             </div>
-          </div>
-          <div class="row">
             <div class="col-md-6">
               <label for="documento">Documento:</label>
               <input
@@ -123,10 +121,10 @@
               />
             </div>
           </div>
-             <div class="row">
+            <div class="row">
             <div class="col-md-6">
-              <label for="tipoDocumento">tipo de documento:</label>
-              <select class="col-md-6" name="tipoDocumento" id="tipoDocumento" required>
+              <label for="tipoDocumento">Tipo de documento:</label>
+              <select class="form-control mb-3" name="tipoDocumento" id="tipoDocumento" required>
                         <option name="cc" value="C.C">C.C</option>
                         <option name="ti" value="T.I">T.I</option>
                         <option name="ce" value="C.E">C.E</option>

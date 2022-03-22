@@ -88,7 +88,7 @@
               />
             </div>
             <div class="col-md-6">
-              <label for="correo">correo:</label>
+              <label for="correo">Correo:</label>
               <input
                 type="email"
                 name="correo"
@@ -100,7 +100,7 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <label for="documento">documento:</label>
+              <label for="documento">Documento:</label>
               <input
                 type="number"
                 name="documento"
@@ -109,18 +109,14 @@
                 class="form-control"
               />
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <label for="tipoDocumento">tipo de documento:</label>
-              <input
-                type="text"
-                name="tipoDocumento"
-                id="tipoDocumento"
-                placeholder="Por favor digite su tipo de documento"
-                class="form-control"
-                autofocus
-              />
+             <div class="col-md-6">
+              <label for="tipoDocumento">Tipo de documento:</label>
+              <select id="tipoDocumento"class="form-control mb-3" name="tipoDocumento" required>
+                        <option name="cc" value="C.C">C.C</option>
+                        <option name="ti" value="T.I">T.I</option>
+                        <option name="ce" value="C.E">C.E</option>
+                        <option name="rc" value="R.C">R.C</option>
+              </select>
             </div>
           </div>
         </div>

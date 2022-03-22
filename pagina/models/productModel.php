@@ -32,7 +32,7 @@
                                             :existencia,
                                             :marca,
                                             :precio,
-                                            :ultimoCosto,);");
+                                            :ultimoCosto);");
             $stmt->bindValue(":nombreProducto", $nombreProducto, PDO::PARAM_STR);
             $stmt->bindValue(":existencia", $existencia, PDO::PARAM_STR);
             $stmt->bindValue(":marca", $marca, PDO::PARAM_STR);

@@ -186,7 +186,7 @@ aside .sibedar a span {
 }
 aside .sidebar a:last-child {
   position: absolute;
-  bottom: 2rem;
+  bottom: 15%;
   width: 100%;
 }
 

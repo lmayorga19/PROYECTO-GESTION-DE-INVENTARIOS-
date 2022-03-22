@@ -83,7 +83,7 @@
                 type="text"
                 name="marca"
                 id="marca"
-                placeholder="Por favaro digite el nombre de la marca"
+                placeholder="Por favor digite el nombre de la marca"
                 class="form-control"
               />
             </div>
@@ -100,7 +100,7 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <label for="ultimoCosto">Ultimo costo::</label>
+              <label for="ultimoCosto">Ultimo costo:</label>
               <input
                 type="number"
                 name="ultimoCosto"

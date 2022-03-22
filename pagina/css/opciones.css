@@ -305,50 +305,22 @@ main .recent-orders a {
   color: var(--color-primary);
 }
 /*=============================== RIGHT==========================*/
+.opciones {
+  margin-left: 40%;
+  float: right;
+}
+
 .right {
   margin-top: 1.4rem;
 }
 
 .right .top {
   display: flex;
-  justify-content: end;
   gap: 2rem;
 }
 
 .right .top button {
   display: none;
-}
-
-.right .theme-toggler {
-  background: var(--color-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 1.6rem;
-  width: 4.2rem;
-  cursor: pointer;
-  border-radius: var(--border-radius-1);
-}
-
-.right .theme-toggler span {
-  font-size: 1.2rem;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.right .theme-toggler span.active {
-  background: var(--color-primary);
-  color: white;
-  border-radius: var(--border-radius-1);
-}
-
-.right .top .profile {
-  display: flex;
-  gap: 2rem;
-  text-align: right;
 }
 
 /*====================== RECENT UPDATES==============*/
@@ -381,14 +353,16 @@ main .recent-orders a {
 
 /*============================= SALES ANALYTICS=========================*/
 .right .sales-analytics {
-  margin: 2rem;
+  margin-left: 100%;
+  width: 100%;
+  margin-top: 20%;
 }
 
 .right .sales-analytics h2 {
   margin-bottom: 0.8rem;
 }
 
-.right .sales-analytics .item {
+.right .item {
   background: var(--color-white);
   display: flex;
   align-items: center;
@@ -420,15 +394,15 @@ main .recent-orders a {
   display: flex;
 }
 
-.right .sales-analytics .item.offline .icon {
+.right .item.offline .icon {
   background: var(--color-danger);
 }
 
-.right .sales-analytics .item.customers .icon {
+.right .item.customers .icon {
   background: var(--color-sucess);
 }
 
-.right .sales-analytics .add-product {
+.right .add-product {
   background: transparent;
   border: 2px dashed var(--color-primary);
   color: var(--color-primary);
@@ -437,17 +411,24 @@ main .recent-orders a {
   justify-content: center;
 }
 
-.right .sales-analytics .add-product:hover {
+.right .add-product:hover {
   background: var(--color-primary);
   color: var(--color-white);
 }
 
-.right .sales-analytics .add-product div {
+.right .add-product div {
   display: flex;
-  align-items: center;
+
   gap: 0.6rem;
 }
 
-.right .sales-analytics .add-product div h3 {
+.right .add-product div h3 {
   font-weight: 600;
+}
+
+.footer {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15%;
 }
