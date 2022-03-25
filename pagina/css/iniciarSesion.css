@@ -48,7 +48,8 @@ background: #4d156d;
  }
 
  .box{
- 	position: relative;
+ 	position: absolute;
+	top:83px; left:420px;
  }
 
  .box .square{
