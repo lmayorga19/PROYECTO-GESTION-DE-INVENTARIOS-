@@ -125,6 +125,7 @@
             <div class="col-md-6">
               <label for="tipoDocumento">Tipo de documento:</label>
               <select class="form-control mb-3" name="tipoDocumento" id="tipoDocumento" required>
+                        <option value="0">Seleccione producto</option> 
                         <option name="cc" value="C.C">C.C</option>
                         <option name="ti" value="T.I">T.I</option>
                         <option name="ce" value="C.E">C.E</option>
