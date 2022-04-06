@@ -34,7 +34,7 @@
                                             :apellidosClientes,
                                             :direccion,
                                             :correo,
-                                            :telefono
+                                            :telefono,
                                             :documento,
                                             :tipoDocumento);");
             $stmt->bindValue(":nombresClientes", $nombresClientes, PDO::PARAM_STR);
